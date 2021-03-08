@@ -1,0 +1,26 @@
+<h1>Marvel Watchlists</h1>
+
+<div class="filterBar">
+    <button (click)="category='MCU'; watchlist=null; viewOrder=null;">MCU</button>
+    <button (click)="category='X-Men'; watchlist=null; viewOrder=null;">X-Men</button>
+</div>
+
+<div *ngIf="category" class="filterBar">
+    <button (click)="setWatchlist('release')">Release Order</button>
+    <button *ngIf="category=='MCU'" (click)="setWatchlist('MC')">Chronological</button>
+    <button *ngIf="category=='X-Men'" (click)="setWatchlist('XT')">Chronological with timeline</button>
+    <button *ngIf="category=='X-Men'" (click)="setWatchlist('X')">Chronological without timeline</button>
+</div>
+<div>
+    <p>
+        {{category}}
+    </p>
+    <p>
+        {{viewOrder}}
+    </p>
+    <ng-container *ngFor="let movie of watchlist">
+        <li [id]="movie.name">
+            {{movie.name}}
+        </li>
+    </ng-container>
+</div>
