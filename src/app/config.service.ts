@@ -12,7 +12,6 @@ export class ConfigService {
   constructor(private http: HttpClient) {}
 
   getDetails(search: string) {
-    console.log("Searching for: "+search);
     return this.http.get(this.URL + search);
   }
 }

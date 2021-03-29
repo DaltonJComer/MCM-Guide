@@ -10,7 +10,7 @@ import {ConfigService} from '../config.service';
 })
 export class CharacterDetailsComponent implements OnInit {
   
-  results:any;
+  results:any = "";
   heroName:string;
 
   constructor(private searcher: ConfigService) { 
@@ -18,8 +18,21 @@ export class CharacterDetailsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  search(name: string){
-    this.searcher.getDetails(name).subscribe(result => this.results = result);
+  search(name: string, field: string){
+    if(field == 'button'){
+      try{
+      this.searcher.getDetails(name).subscribe(result => this.results = result);
+      }catch(e:any){
+
+      }
+    }
+    else if(field == 'searchbar'){
+      try{
+        this.searcher.getDetails(name).subscribe(result => this.results = result);
+      }catch(e:any){
+        
+      }
+    }
   }
 
 }

@@ -1,67 +1,106 @@
 <div class="searchBar">
-    Search:<input type="text" [(ngModel)]="heroName"> <button (click)="search(this.heroName)">Search</button>
+<input type="text" [(ngModel)]="heroName" [placeholder]="'Search for a Character...'" (keydown.enter)="search(this.heroName, 'searchbar')"> <button (click)="search(this.heroName, 'button')">Search</button>
+</div>
+<div *ngIf = "this.results.response == 'error'">
+    Invalid Character Name, please try again
 </div>
 
-<div class="characterDetails" *ngFor="let details of this.results['results']">
-    <div id="image">
-        <img src="{{details['image'].url}}" alt="">
-    </div>
-    <div id="name">
-        <label>Name:</label>
-        {{details.name}}
-    </div>
-    <div id="full-name">
-        <label>Full name:</label>
-        {{details.biography['full-name']}}
-    </div>
-    <div id="place-of-birth">
-        <label>Place of birth:</label>
-        {{details.biography['place-of-birth']}}
-    </div>
-    <div id="firstAppearence">
-        <label>First Appearence:</label>
-        {{details.biography['first-appearance']}}
-    </div>
-    <div id="alignment">
-        <label>Alignment:</label>
-        {{details.biography.alignment}}
-    </div>
-    <div id="publisher">
-        <label>Publisher:</label>
-        {{details.biography.publisher}}
-    </div>
-    <div id="occupation(s)">
-        <label>Occupation:</label>
-        <ul>
-            <li *ngFor="let occupation of details.work.occupation.split(',')">
-                {{occupation}}
-            </li>
-        </ul>
-    </div>
-    <div id="base(s)">
-        <label>Base:</label>
-        <ul>
-            <li *ngFor="let base of details.work.base.split(',')">
-                {{base}}`
-            </li>
-        </ul>
-    </div>
-    <div id="appearence">
-        <label>Gender:</label>
-        {{details.appearance.gender}}
-        <label>Race:</label>
-        {{details.appearance.race}}
-        <label>Height:</label>
-        {{details.appearance.height}}
-        <label>Weight:</label>
-        {{details.appearance.weight}}
-        <label>Eye Color:</label>
-        {{details.appearance['eye-color']}}
-        <label>Hair Color:</label>
-        {{details.appearance['hair-color']}}
-    </div>
-    <div class="family">
-        <label>Relatives: </label>
-        {{details.connections.relatives}}
+<div class="details">
+    <div class="characterDetails" *ngFor="let details of this.results['results']">
+        <div id="image">
+            <img src="{{details['image'].url}}" alt="">
+        </div>
+
+        <div id="name">
+            <label>Name:</label>
+            {{details.name}}
+        </div>
+
+        <div id="full-name">
+            <label>Full name:</label>
+            {{details.biography['full-name']}}
+        </div>
+
+        <div id="place-of-birth" *ngIf="details.biography['place-of-birth']!='-'">
+            <label>Place of birth:</label>
+            {{details.biography['place-of-birth']}}
+        </div>
+
+        <div id="firstAppearence" *ngIf="details.biography['first-appearance']!='-'">
+            <label>First Appearence:</label>
+            {{details.biography['first-appearance']}}
+        </div>
+
+        <div id="alignment" *ngIf="details.biography.alignment!='-'">
+            <label>Alignment:</label>
+            {{details.biography.alignment}}
+        </div>
+
+        <div id="publisher" *ngIf="details.biography.publisher!='-'">
+            <label>Publisher:</label>
+            {{details.biography.publisher}}
+        </div>
+
+        <div id="occupation(s)" *ngIf="details.work.occupation!='-'">
+            <label>Occupation:</label>
+            <ul>
+                <li *ngFor="let occupation of details.work.occupation.split(',')">
+                    {{occupation}}
+                </li>
+            </ul>
+        </div>
+
+        <div id="base(s)" *ngIf="details.work.base!='-'">
+            <label>Base:</label>
+            <ul>
+                <li *ngFor="let base of details.work.base.split(',')">
+                    {{base}}
+                </li>
+            </ul>
+        </div>
+
+        <div id="gender">
+            <label>Gender:</label>
+            {{details.appearance.gender}}
+        </div>
+
+        <div id="race">
+            <label>Race:</label>
+            {{details.appearance.race}}
+        </div>
+
+        <div id="height">
+            <label>Height:</label>
+            {{details.appearance.height}}
+        </div>
+
+        <div id="weight">
+            <label>Weight:</label>
+            {{details.appearance.weight}}
+        </div>
+
+        <div id="eye-color">
+            <label>Eye Color:</label>
+            {{details.appearance['eye-color']}}
+        </div>
+
+        <div id="hair-color">
+            <label>Hair Color:</label>
+            {{details.appearance['hair-color']}}
+        </div>
+
+        <div class="family" *ngIf="details.connections.relatives!='-'">
+            <label>Relatives: </label>
+            <ul>
+                <li *ngFor="let relative of details.connections.relatives.split('),')">
+                    <ng-container *ngIf="relative.indexOf(')')>-1 || (relative.indexOf(')')==-1 && relative.indexOf('(')==-1)">
+                        {{relative}}
+                    </ng-container>
+                    <ng-container *ngIf="relative.indexOf(')')==-1 && relative.indexOf('(')>-1">
+                        {{relative}})
+                    </ng-container>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
