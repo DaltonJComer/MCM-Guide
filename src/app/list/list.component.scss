@@ -4,26 +4,20 @@ ul{
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-
+    width: 100%;
+    justify-content: center;
     li{
         background: rgb(238,238,238);
         padding: 1em;
         margin-right: 10px;
-        width: 20%;
-        height: 200px;
-        margin-bottom: 1em;
+        width: auto;
+        height: fit-content;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
-
-        p{
-            margin: 0;
-        }
-
-        p.name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-align: center;
-        }
+        cursor: pointer;
+        text-align:center;
+        border-radius: 100px;
     }
 }
 
@@ -33,23 +27,74 @@ img{
 }
 
 .searchBar{
-    display:flex;
-    align-items:center;
-    select{
-        width:auto;
+    display:inline-flex;
+    white-space: nowrap;
+    width: 100%;
+    font-size: xx-large;
+    font-family:'Times New Roman', Times, serif;
+    padding-top:10px;
+    padding-bottom: 10px;
+    input{
+        width:100%;
         height:auto;
-    }
-    h2{
-        padding: 1em;
-    }
-    button{
-        padding: 1em;
-        margin: 1em;
+        font-size: large;
+        background: lightgray;
     }
 }
 
+.overall-movies{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    //height: 100%;
+}
+
 .movieDetails{
-    background-color: #C5CFD1;
+    background: #C5CFD1;
     border-color: #868A93;
-    border-radius: 3rem;
+    white-space: nowrap;
+    height: fit-content;
+    font-size: larger;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    flex-grow: 1;
+    flex-basis: 50%;
+    border: 3px solid rgb(158, 182, 196);
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.disabledDetails{
+    display: none;
+}
+
+.categoryButtons{
+    display: flex;
+    border-radius: 5px;
+    //margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    :hover{
+        background: rgba(255, 255, 255, 0.795);
+        color: rgba(29, 119, 179, 0.815);
+    }
+}
+
+.category-btn{
+    display: flex;
+    cursor: pointer;
+    width: 25%;
+    height: fit-content;
+    //margin: 2px;
+    background: white;
+    //border-radius: 5px;
+    background: rgba(29, 119, 179, 0.815);
+    color: rgba(255, 255, 255, 0.795);
+    justify-content: center;
+    border: 2px solid black;
+}
+.active{
+    border-bottom: 2px solid rgba(29, 119, 179, 0.815);
 }

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import {FormsModule} from '@angular/forms';
 import { WatchListsComponent } from './watch-lists/watch-lists.component';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    WatchListsComponent
+    WatchListsComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     BrowserModule,

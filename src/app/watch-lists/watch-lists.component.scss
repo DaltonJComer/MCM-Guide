@@ -1,44 +1,46 @@
 .filterBar{
     display:flex;
-    align-items:center;
-    select{
-        width:auto;
-        height:auto;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    .filterButton{
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        background: white;
+        border: 2px solid black;
+        cursor: pointer;
+        margin: 10px;
     }
-    h2{
-        padding: 1em;
+    .activeFilter{
+        background: lightblue;
+        color: white;
     }
-    button{
-        padding: 1em;
-        margin: 1em;
+    .orderButton{
+        display: flex;
+        width: 30%;
+        justify-content: center;
+        background: white;
+        border: 2px solid black;
+        cursor: pointer;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+    }
+    .activeOrder{
+        background: lightblue;
+        color: white;
     }
 }
 
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
+.list{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
 
-    li{
-        background: rgb(238,238,238);
-        padding: 1em;
-        margin-right: 10px;
-        width: 20%;
-        height: 200px;
-        margin-bottom: 1em;
-        display: flex;
-        flex-direction: column;
-
-        p{
-            margin: 0;
-        }
-
-        p.name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-    }
+li{
+    font-size:x-large;
 }

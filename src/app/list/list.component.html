@@ -1,26 +1,25 @@
-<!--<h1>Movies based on Marvel Comics:</h1>-->
-
 <div class="searchBar">
-<h2>Search:     <input type="text" name="search" [(ngModel)]="search"></h2>
-<h2>Category: </h2>
-<button *ngFor="let option of categories" (click)="category=option.title">{{option.title}}</button>
+Search: <input type="text" name="search" [(ngModel)]="search">
 </div>
 
-<h2>{{category}} movies:</h2>
+<div class="categoryButtons">
+    <div class="category-btn" [ngClass]="{'active':option.title==category}" *ngFor="let option of categories" (click)="category=option.title">
+        {{option.title}}
+    </div>
+</div>
 
-<ul *ngIf="movies">
-    <ng-container *ngFor="let movie of movies">
-        <li *ngIf="(search == null || movie.name.toLowerCase().includes(search.toLowerCase())) && (category=='All' || movie.category==category)" 
-        [ngStyle]="{'background-color': movie.category=='MCU'? '#ED1D24' : (movie.category=='X-Men'?'#1D90F3':'#FCD1A9')}" 
-        [id]="movie.name">
-            <p class="name">{{movie.name}}</p>
-            <button class="movieDetails" (click)="movie.details=!movie.details">View Details</button>
-            <div *ngIf="movie.details==true">
-                <p class="year">Release Year: {{movie.year}}</p>
-                <div *ngIf="movie.photo">
-                    <img src="assets/img/{{movie.photo}}">
-                </div>
-            </div>
-        </li>
-    </ng-container>
-</ul>
+<div class="overall-movies">
+    <div class="movieDetails" 
+    *ngFor="let movie of movies" 
+    [ngClass]="{'disabledDetails':((search != null && !movie.name.toLowerCase().includes(search.toLowerCase())) || (category!='All' && movie.category!=category))}"
+    [ngStyle]="{'background-color': movie.category=='MCU'? 'rgb(202,60,40)' : (movie.category=='X-Men'?'rgb(87,158,179)':'rgb(189,186,158)')}" 
+    [id]="movie.name"
+    (click)="movie.details=!movie.details">
+        <div class="name">
+            {{movie.name}}
+        </div>
+        <div *ngIf="movie.details==true">
+            <p class="year">Release Year: {{movie.year}}</p>
+        </div>
+    </div>
+</div>

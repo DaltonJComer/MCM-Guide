@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@1,700&display=swap');
 
-$primary: #EB1D28;
-$links:   #FCE611;
-$mainBacking: #03ADE9;
+$primary: rgba(29, 119, 179, 0.815);
+$links:   rgba(255, 255, 255, 0.795);
+$mainBacking: rgb(158, 182, 196);
 
 body{
     background-color: $mainBacking;

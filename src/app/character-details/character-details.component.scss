@@ -1,0 +1,35 @@
+.searchBar{
+    display:inline-flex;
+    white-space: nowrap;
+    width: 100%;
+    font-size: xx-large;
+    font-family:'Times New Roman', Times, serif;
+    padding-top:10px;
+    padding-bottom: 10px;
+    align-content: center;
+    input{
+        width:80%;
+        height:auto;
+        font-size: large;
+        background: lightgray;
+    }
+    button{
+        display: block;
+        position: relative;
+        width: 20%;
+    }
+}
+
+
+.characterDetails{
+    background: lightblue;
+    margin: 20px;
+    border: 2px solid black;
+}
+
+label{
+    color:red;
+    margin: 2px;
+    font-size: x-large;
+    text-decoration: underline;
+}
