@@ -13,7 +13,12 @@ export class CharacterDetailsComponent implements OnInit {
   results:any = "";
   heroName:string;
 
-  constructor(private searcher: ConfigService) { 
+  constructor(private searcher: ConfigService) {
+    try{
+      this.searcher.getDetails("hulk").subscribe(result => this.results = result);
+      }catch(e:any){
+
+      } 
   }
 
   ngOnInit(): void {}

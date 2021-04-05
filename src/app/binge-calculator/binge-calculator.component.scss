@@ -1,0 +1,19 @@
+.totalMovies{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.movie{
+    cursor:default;
+    background: lightblue;
+    margin: 5px;
+    border: 2px solid black;
+    width: 30%;
+    white-space: pre-wrap;
+}
+
+.totalTime{
+    width: 100%;
+    text-align: center;
+}

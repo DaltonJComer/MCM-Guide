@@ -56,7 +56,9 @@ img{
     height: fit-content;
     font-size: larger;
     font-family:'Times New Roman', Times, serif;
-    font-weight: bold;
+    .name{
+        font-weight: bold;
+    }
     flex-grow: 1;
     flex-basis: 50%;
     border: 3px solid rgb(158, 182, 196);
