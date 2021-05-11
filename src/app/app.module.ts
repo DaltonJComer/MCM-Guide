@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import { WatchListsComponent } from './watch-lists/watch-lists.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { BingeCalculatorComponent } from './binge-calculator/binge-calculator.component';
+import { SuperheroLandingComponent } from './superhero-landing/superhero-landing.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BingeCalculatorComponent } from './binge-calculator/binge-calculator.co
     ListComponent,
     WatchListsComponent,
     CharacterDetailsComponent,
-    BingeCalculatorComponent
+    BingeCalculatorComponent,
+    SuperheroLandingComponent
   ],
   imports: [
     BrowserModule,
