@@ -56,7 +56,13 @@ img{
     height: fit-content;
     font-size: larger;
     font-family:'Times New Roman', Times, serif;
+<<<<<<< HEAD
     //font-weight: bold;
+=======
+    .name{
+        font-weight: bold;
+    }
+>>>>>>> 001f8010d03f2f93feb8ce38efef7a5019ed09ca
     flex-grow: 1;
     flex-basis: 50%;
     border: 3px solid rgb(158, 182, 196);

@@ -1,0 +1,21 @@
+<!-- <div class="totalMovies">
+    <div class="movie" *ngFor="let movie of movies">
+        {{movie.name}}
+        <br>
+        <input type=button id="{{movie.name}}" value="add" (click)="updateList(movie)"/>
+    </div>
+</div> -->
+<h3>
+Please select which movies you wish to binge (total time shown at bottom of page):
+</h3>
+<div class="totalMovies">
+    <div class="movie" *ngFor="let movie of movies">
+        <input type="radio" (change)="updateTime(movie.runtime)" style="cursor: pointer;"> {{movie.name}}
+    </div>
+</div>
+
+<h2 class="totalTime">
+    TOTAL TIME:
+    {{totalHours}}hr 
+    {{totalMinutes}}min
+</h2>

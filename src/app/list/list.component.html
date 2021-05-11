@@ -12,7 +12,7 @@
     <div class="movieDetails" 
     *ngFor="let movie of movies" 
     [ngClass]="{'disabledDetails':((search != null && !movie.name.toLowerCase().includes(search.toLowerCase())) || (category!='All' && movie.category!=category))}"
-    [ngStyle]="{'background-color': movie.category=='MCU'? 'rgb(202,60,40)' : (movie.category=='X-Men'?'rgb(87,158,179)':'rgb(189,186,158)')}" 
+    
     [id]="movie.name"
     (click)="movie.details=!movie.details">
         <div class="name">
@@ -25,6 +25,7 @@
         </div>
         <div *ngIf="movie.details==true">
             <p class="year">Release Year: {{movie.year}}</p>
+            <p class="year">Runtime: {{movie.runtime}} minutes</p>
         </div>
         <jw-modal id="{{movie.name}}">
 
@@ -34,3 +35,5 @@
         </div>
     </div>
 </div>
+
+<!-- [ngStyle]="{'background-color': movie.category=='MCU'? 'rgb(165,108,99)' : (movie.category=='X-Men'?'rgb(125,150,169)':'rgb(232,182,153)')}" -->
