@@ -1,0 +1,12 @@
+.poster{
+    height: 200px;
+    width: 150px;
+}
+
+.movie{
+    width: 25%;
+    height: calc(fit-content + 50px);
+    align-content: center;
+    text-align: center;
+    background: gray;
+}

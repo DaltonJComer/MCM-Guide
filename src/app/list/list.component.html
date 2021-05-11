@@ -17,10 +17,21 @@
     (click)="movie.details=!movie.details">
         <div class="name">
             {{movie.name}}
+        <br>
+            <!-- <button mat-raised-button (click)="openDialog()">View Details</button> -->
+            <div class="infoToggle" *ngIf="movie.details==false">
+                Show more
+            </div>
         </div>
         <div *ngIf="movie.details==true">
             <p class="year">Release Year: {{movie.year}}</p>
             <p class="year">Runtime: {{movie.runtime}} minutes</p>
+        </div>
+        <jw-modal id="{{movie.name}}">
+
+        </jw-modal>
+        <div class="infoToggle" *ngIf="movie.details==true">
+            Show less
         </div>
     </div>
 </div>

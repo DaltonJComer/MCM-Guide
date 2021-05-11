@@ -11,6 +11,7 @@ import { CharacterDetailsComponent } from './character-details/character-details
 import { BingeCalculatorComponent } from './binge-calculator/binge-calculator.component';
 import { SuperheroLandingComponent } from './superhero-landing/superhero-landing.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
