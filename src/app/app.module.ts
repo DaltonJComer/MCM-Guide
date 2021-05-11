@@ -8,13 +8,15 @@ import { ListComponent } from './list/list.component';
 import {FormsModule} from '@angular/forms';
 import { WatchListsComponent } from './watch-lists/watch-lists.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     WatchListsComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
