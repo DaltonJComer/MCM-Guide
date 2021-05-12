@@ -13,13 +13,12 @@
     *ngFor="let movie of movies" 
     [ngClass]="{'disabledDetails':((search != null && !movie.name.toLowerCase().includes(search.toLowerCase())) || (category!='All' && movie.category!=category))}"
     
-    [id]="movie.name"
-    (click)="movie.details=!movie.details">
+    [id]="movie.name">
         <div class="name">
             {{movie.name}}
         <br>
             <!-- <button mat-raised-button (click)="openDialog()">View Details</button> -->
-            <div class="infoToggle" *ngIf="movie.details==false">
+            <div class="infoToggle" *ngIf="movie.details==false" (click)="movie.details=!movie.details">
                 Show more
             </div>
         </div>
@@ -27,10 +26,7 @@
             <p class="year">Release Year: {{movie.year}}</p>
             <p class="year">Runtime: {{movie.runtime}} minutes</p>
         </div>
-        <jw-modal id="{{movie.name}}">
-
-        </jw-modal>
-        <div class="infoToggle" *ngIf="movie.details==true">
+        <div class="infoToggle" *ngIf="movie.details==true" (click)="movie.details=!movie.details">
             Show less
         </div>
     </div>
