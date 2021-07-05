@@ -10,9 +10,9 @@
     <div class="orderButton"  [ngClass]="{activeOrder: viewOrder==='Chronological without timeline'}" *ngIf="category=='X-Men'" (click)="setWatchlist('X')">Chronological without timeline</div>
 </div>
 <div class="list">
-    <ol>
-        <li [id]="movie.name" *ngFor="let movie of watchlist">
-            {{movie.name}}
-        </li>
-    </ol>
+    <div class="movie" [id]="movie.name" *ngFor="let movie of watchlist; let i = index;">
+        <div class="title">
+            {{i+1}}. {{movie.name}}
+        </div>
+    </div>
 </div>

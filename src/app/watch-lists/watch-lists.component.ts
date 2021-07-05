@@ -17,6 +17,7 @@ export class WatchListsComponent implements OnInit {
   ]
   viewOrder: string;
   movies: object;
+  movieCounter = 1;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,6 +26,10 @@ export class WatchListsComponent implements OnInit {
       console.log(data);
       this.movies = data;
     })
+  }
+
+  increaseCounter(){
+    this.movieCounter++;
   }
 
   setWatchlist(order){

@@ -51,15 +51,16 @@ img{
 
 .movieDetails{
     background: #C5CFD1;
-    border-color: #868A93;
     white-space: nowrap;
     height: fit-content;
-    width: 33%;
+    width: 32%;
     font-size: large;
     font-family:'Times New Roman', Times, serif;
     text-align: center;
-    border-top: 3px solid rgb(158, 182, 196);
-    border-right: 3px solid rgb(158, 182, 196);
+    border: 1px solid black;
+    box-shadow: 2px 2px;
+    margin-bottom: 5px;
+    margin-left: 5px;
     .name{
     flex-grow: 1;
     flex-basis: 50%;

@@ -7,6 +7,9 @@ header{
     display: inline-flex;
 }
 
+.router-link-active {
+	border-bottom: 5px solid white;
+}
 
 nav{
     display: flex;
